@@ -6,8 +6,11 @@ gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 edges = cv2.Canny(gray, 75, 100)
 # goruntu okundu, gri formata donusturuldu, kenarlar bulundu
 
-lines = cv2.HoughLinesP(edges, 1, np.pi/180, 10, maxLineGap=120)
-# hough donusumu ile kenarlar bulundu
+lines = cv2.HoughLinesP(edges, 1, np.pi/180, 10, maxLineGap=120)  # hough donusumu ile kenarlar bulundu
+# par1 kenar detektörünün cikisi. Gri tonlamalı bir resim olmalıdır
+# par2 Parametrenin çözünürlüğü piksel cinsinden alinmasidir varsayila deger 1
+# par3 Parametrenin çözünürlüğü radyan cinsinden alinmasidir varsayila deger 1
+# par4 bir çizgiyi algılamak icin minimum kesisim sayısı
 
 for line in lines:  # bulunan kenarlar kadar donen dongu tanimlandi
     x1, y1, x2, y2 = line[0]  # baslangi ve bitis noktalarinin koordianatlari tanimlandi
