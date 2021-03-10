@@ -14,7 +14,6 @@ M2 = cv2.getRotationMatrix2D((col/2, row/2), 180, 1.1)  # par2 ile dondurme isle
 
 dst2 = cv2.warpAffine(img, M2, (col, row))  # fonksiyon ile m degerlerinin uygulanacagi degisken olusturuldu
 
-
 cv2.imshow("dst", dst)
 cv2.imshow("dst2", dst2)
 cv2.waitKey(0)

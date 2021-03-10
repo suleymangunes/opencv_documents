@@ -25,8 +25,8 @@ cv2.polylines(canvas, [points], True, (0, 255, 0), 5)  # coklu noktalar birlesti
 # par1 tuval, par2 noktalar, par3 seklin kapali olup olmasini belirler, par4 renk, par5 kalinlik
 
 cv2.ellipse(canvas, (400, 450), (80, 40), 0, 0, 360, (255, 0, 255), -1)  # elips olusturuldu. par1 tuval,
-# par2 merkez noktasi, par3 uzun ve kisa yaricap, par 4 merkezin acisi, par4 elipsin olusturulacagi kisim
-# par5 renk, par6 kalinlik
+# par2 merkez noktasi, par3 uzun ve kisa yaricap, par 4 merkezin acisi, par5 elipsin olusturulacagi kisim baslangic
+# par6 elipsin olusturulacagi kisim bitis, par7 renk, par8 kalinlik
 
 cv2.imshow("canvas", canvas)
 cv2.waitKey(0)

@@ -14,7 +14,7 @@ img3 = cv2.resize(img3, (int(c3*3), int(r3*3)))
 kernel = np.ones((5, 5), np.uint8)
 kernel2 = np.ones((25, 25), np.uint8)
 
-erosion = cv2.erode(img, kernel, iterations=3)  # varsayilan beyaz 1 siyah ise 2'dir,
+erosion = cv2.erode(img, kernel, iterations=3)  # varsayilan beyaz 1 siyah ise 0'dir,
 # erozyon islemini cekirdek etrafindaki tum degerler 1 degil ise yapar, bu sayede cizgi incelir, erozyona ugrar
 
 dilation = cv2.dilate(img, kernel, iterations=2)  # genisleme isleminin yapilmasi icin cekirdek etrafindaki degerlerden

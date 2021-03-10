@@ -29,7 +29,7 @@ while True:
     frame = cv2.flip(frame, 1)  # gelen goruntunun y eksenine gore simetrisi alindi
 
     frame_hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)  # kare hsv formatina donusturuldu amac hsv renk araliklarini
-    # belirken degerleri buna uygun kareye yazmak
+    # belirlerken degerleri buna uygun kareye yazmak
 
     l_h = cv2.getTrackbarPos("lover-h", "trackbar")  # trackbarlarin anlik degeri alindi
     l_s = cv2.getTrackbarPos("lover-s", "trackbar")

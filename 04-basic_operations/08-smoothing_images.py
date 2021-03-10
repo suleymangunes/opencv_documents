@@ -17,7 +17,7 @@ blur_gaussin = cv2.GaussianBlur(img, (19, 19), 0)  # gauss bulanigkligini gideri
 # par2 deger 1 yatay renk karisimi deger 2 ise dikey renk karisimi yaparak bulaniklastirir
 # gauss kenarlari bulmadan bulaniklastirir
 
-blur_medyan = cv2.medianBlur(img2, 23)  # parazitleri kaldirmayi saglar
+blur_medyan = cv2.medianBlur(img2, 231)  # parazitleri kaldirmayi saglar, par3 cekirdegin boyutunu belirler
 
 blur_bilateral = cv2.bilateralFilter(img3, 9, 75, 75)  # kenarlari belirler ve merkezi olan degerler
 # ile bulanklistirma islemi yapar

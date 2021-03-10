@@ -1,6 +1,5 @@
 import cv2
 
-
 img = cv2.imread(r"C:\Users\suley\Desktop\software\materials\opencv_materials\mustang.jpg", 0)  # 0 ile gri tonlandi
 r, c = img.shape  # resmin satir ve sutundaki piksel sayisi degiskenlere atandi, ekran cozunurlugu
 img = cv2.resize(img, (int(c/2), int(r/2)))  # degerler ile resim yeniden boyutlandirildi
