@@ -16,7 +16,7 @@ for cnt in contours:
     cv2.drawContours(img, [approx], 0, 0, 3)  # konturler cizildi
 
     x = approx.ravel()[0]  # iki boyutlu approx degerlerini tek boyuta cekildi ve degerleri x y degiskenine atandi
-    y = approx.ravel()[1]  # bu sayede yazinin yazialacagi koordinat belirlenmis oldu
+    y = approx.ravel()[1]  # bu sayede yazinin yazilacagi koordinat belirlenmis oldu
 
     if len(approx) == 3:
         cv2.putText(img, "triangle", (x + 10, y), font1, 0.5, (0, 0, 255))
