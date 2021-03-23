@@ -17,7 +17,7 @@ bg = np.zeros((thresh.shape[0], thresh.shape[1], 3), dtype=np.uint8)  # arka pla
 
 for i in range(len(contours)):  # arka plana cizim yapilmasi icin dongu olusturuldu
     cv2.drawContours(bg, contours, i, (255, 0, 0), 3, 8, hierarchy)  # kontor degerleri cizildi
-    cv2.drawContours(bg, hull, i, (0, 255, 0), 1, 8)  # dis bukey degerler cizildi 
+    # cv2.drawContours(bg, hull, i, (0, 255, 0), 1, 8)  # dis bukey degerler cizildi
 
 cv2.imshow("bg", bg)
 cv2.waitKey(0)

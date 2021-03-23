@@ -8,6 +8,7 @@ ret, thresh = cv2.threshold(gray, 170, 255, cv2.THRESH_BINARY)
 # esik degerine gore pikselleri siyah beyaz olarak ayarlar
 
 contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)  # contour noktalari belirlendi
+print(contours)
 
 cv2.drawContours(img, contours, 1, (0, 0, 255), 3)  # kontorler cizildi, par1 goruntuyu par2 kontur degerleri
 # par3 kontorun degeri par4 renk par5 kalinlik
