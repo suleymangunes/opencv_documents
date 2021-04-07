@@ -18,13 +18,14 @@ while True:
         break
     row, col, hc = frame.shape  # karenin yuksekligi genisligi ve renklendirilme ozelligi degiskenlere atandi
 
-    cv2.imwrite(r"C:\Users\suley\Desktop\software\materials\opencv_materials\toplama_fotolar\write_img.jpg", frame)
-    # grafik methodu ile calismasi icin frame kaydedildi
-
-    img = Image.open(r"C:\Users\suley\Desktop\software\materials\opencv_materials\toplama_fotolar\write_img.jpg")
+    # cv2.imwrite(r"C:\Users\suley\Desktop\software\materials\opencv_materials\toplama_fotolar\write_img.jpg", frame)
+    # # grafik methodu ile calismasi icin frame kaydedildi
+    #
+    # img = Image.open(r"C:\Users\suley\Desktop\software\materials\opencv_materials\toplama_fotolar\write_img.jpg")
     # kaydedilen resim pil kutuphanesi araciligiyla acildi
+    ### gerek yokmusss
 
-    text = pytesseract.image_to_boxes(img, lang="eng")  # tesseract ile karedeki yazi okundu
+    text = pytesseract.image_to_boxes(frame, lang="eng")  # tesseract ile karedeki yazi okundu
     text = text.split("\n")  # yazi kutu seklinde ciktigi icin satirlar birbirinden ayrildi
 
     try:  # eger listede bos deger var ise silinmesi saglandi yok ise devam edildi

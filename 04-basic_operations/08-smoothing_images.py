@@ -23,6 +23,6 @@ blur_bilateral = cv2.bilateralFilter(img3, 9, 75, 75)  # kenarlari belirler ve m
 # ile bulanklistirma islemi yapar
 
 cv2.imshow("images", img3)
-cv2.imshow("blur", blur )
+cv2.imshow("blur", blur_bilateral)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
