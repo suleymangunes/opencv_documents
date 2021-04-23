@@ -6,6 +6,8 @@ def nothing(x):
 
 
 cap = cv2.VideoCapture(r"C:\Users\suley\Desktop\software\materials\opencv_materials\hsv.mp4")
+# cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+
 # webcamdan yapilmak istenirse 0 yazilmasi yeterli olacaktir
 cv2.namedWindow("trackbar")
 
@@ -28,6 +30,7 @@ while True:
 
     r, c, hc = frame.shape
     frame = cv2.resize(frame, (int(c/3), int(r/3)))
+    frame_contours = frame.copy()
 
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
@@ -44,6 +47,15 @@ while True:
     mask = cv2.inRange(hsv, lower_blue, upper_blue)  # girilen degerler arasindaki rengin secilmesi saglandi
 
     bitwise = cv2.bitwise_and(frame, frame, mask=mask)  # siyah 1 beyaz 0'dir bitwise ile belirlenen nesne onplana cikti
+
+    kernel = np.ones((5, 5), np.uint8)
+    dilation = cv2.dilate(mask, kernel, iterations=2)
+    blur = cv2.GaussianBlur(dilation, (5, 5), 1)
+    cnt, _ = cv2.findContours(blur, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    cv2.drawContours(frame_contours, cnt, 0, (0, 255, 0), 2)
+    cv2.imshow("dilate", dilation)
+    cv2.imshow("blur", blur)
+    cv2.imshow("contours", frame_contours)
 
     cv2.imshow("frame", frame)
     cv2.imshow("mask", mask)

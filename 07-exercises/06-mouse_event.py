@@ -7,6 +7,7 @@ circles = []  # cember koordinatlarini alacak bos liste tanimlandi
 def mouse(event, x, y, flags, params):  # farede sag tusa tiklandiginda o anki koordinati donduren fonskiyon tanimlandi
     if event == cv2.EVENT_LBUTTONDOWN:  # sag tusa basilinca bos listeye koordinatlar tupple olarak gonderildi
         circles.append((x, y))
+        print(x, y)
 
 
 cv2.namedWindow("frame")  # mouse islevinin caliacagi pencere tanimlandi
