@@ -5,6 +5,7 @@ img = cv2.imread(r"C:\Users\suley\Desktop\software\materials\opencv_materials\re
 img2 = cv2.imread(r"C:\Users\suley\Desktop\software\materials\opencv_materials\resim.jpg")
 
 cv2.circle(img2, (300, 300), 100, (0, 0, 255), -1)
+diff1 = cv2.subtract(img, img2)  # subtract iki resmi karsilastirir, ayni olan kisimlari siyaha boyar farkli olan
 diff = cv2.subtract(img, img2)  # subtract iki resmi karsilastirir, ayni olan kisimlari siyaha boyar farkli olan
 # olan kisimlari oldugu gibi gosterir
 diff = cv2.cvtColor(diff, cv2.COLOR_BGRA2GRAY)  # farkli olan kisimlarin koordinatalarini bulmak icin renk kodu degisti
@@ -42,6 +43,8 @@ lefty = int((-x * vy / vx) + y)
 righty = int(((cols - x) * vy / vx) + y)
 cv2.line(img, (cols - 1, righty), (0 , lefty), (0, 255, 0), 2)
 
+
+cv2.imshow("diff1", diff1)
 cv2.imshow("diff", diff)
 cv2.imshow("img", img)
 cv2.imshow("img2", img2)

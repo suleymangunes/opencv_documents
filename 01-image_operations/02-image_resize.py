@@ -1,6 +1,6 @@
 import cv2
 
-img = cv2.imread(r"C:\Users\suley\Desktop\software\materials\opencv_materials\resim.jpg")
+img = cv2.imread(r"C:\Users\suley\desktop\software\materials\opencv_materials\j.png")
 
 row, col, clr = img.shape  # shape methodu ile resmin sirayla satir, sutun ve renk degeri alindi degiskenlere atandi
 
